@@ -1,0 +1,1 @@
+<?php get_header(); ?><section class="rrv-content"><div class="rrv-container rrv-content__wrap"><?php while(have_posts()):the_post();?><div class="rrv-kicker">Royal Rest Villa</div><h1><?php the_title();?></h1><?php if(has_post_thumbnail())the_post_thumbnail('large');?><div class="entry-content"><?php the_content();?></div><?php endwhile;?></div></section><?php get_footer(); ?>
