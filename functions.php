@@ -41,6 +41,17 @@ function rrv_whatsapp_href($phone){ return preg_replace('/\D/','',$phone); }
 function rrv_home_anchor($id='home'){ return is_front_page() ? '#'.ltrim($id,'#') : home_url('/#'.ltrim($id,'#')); }
 function rrv_booking_url(){ return home_url('/#book'); }
 
+function rrv_one_page_menu_fallback(){
+    echo '<ul>';
+    foreach([
+        'home'=>'Home','about'=>'The Villa','rooms'=>'Rooms','amenities'=>'Amenities',
+        'gallery'=>'Gallery','reviews'=>'Reviews','contact'=>'Contact'
+    ] as $id=>$label){
+        echo '<li><a href="'.esc_url(rrv_home_anchor($id)).'">'.esc_html($label).'</a></li>';
+    }
+    echo '</ul>';
+}
+
 function rrv_gallery_images(){
     $images=[];
     for($i=1;$i<=6;$i++){
