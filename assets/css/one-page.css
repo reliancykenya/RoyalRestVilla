@@ -1,0 +1,108 @@
+/* Royal Rest Villa — one-page experience */
+html{scroll-padding-top:92px}
+.rrv-one-page section[id]{scroll-margin-top:88px}
+.rrv-header{transition:box-shadow .2s ease,background .2s ease}
+.rrv-header.is-scrolled{box-shadow:0 12px 35px rgba(20,28,23,.08);background:rgba(255,253,248,.97)}
+.rrv-nav a{position:relative}
+.rrv-nav a:after{content:"";position:absolute;left:0;right:100%;bottom:-8px;height:2px;background:var(--rrv-gold);transition:right .2s ease}
+.rrv-nav a:hover:after,.rrv-nav a.is-active:after{right:0}
+.rrv-nav a.is-active{color:var(--rrv-gold-dark)}
+.rrv-brand .custom-logo-link{display:flex;align-items:center}
+.rrv-brand .custom-logo{max-width:210px}
+.rrv-hero{min-height:min(820px,88vh);isolation:isolate}
+.rrv-hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 72% 30%,rgba(199,154,36,.18),transparent 32%);z-index:0;pointer-events:none}
+.rrv-hero__content{max-width:900px}
+.rrv-hero__content h1{text-wrap:balance}
+.rrv-scroll-cue{position:absolute;left:50%;bottom:82px;z-index:3;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:7px;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.78)}
+.rrv-scroll-cue i{font-style:normal;font-size:1.2rem;animation:rrvFloat 1.8s ease-in-out infinite}
+@keyframes rrvFloat{50%{transform:translateY(7px)}}
+.rrv-bookbar__inner{position:relative}
+.rrv-bookbar__inner:before{content:"BOOK DIRECT";position:absolute;left:22px;top:-12px;background:var(--rrv-forest);color:#fff;border-radius:999px;padding:4px 9px;font-size:.64rem;font-weight:800;letter-spacing:.12em}
+.rrv-intro{padding-top:110px}
+.rrv-image-placeholder,.rrv-room-placeholder{background:linear-gradient(145deg,#e5d9b4,#8a947f 55%,#29382f);position:relative;overflow:hidden}
+.rrv-image-placeholder{aspect-ratio:4/3;border-radius:30px;box-shadow:var(--rrv-shadow)}
+.rrv-image-placeholder:after,.rrv-room-placeholder:after{content:"Royal Rest Villa";position:absolute;inset:auto 20px 18px;color:rgba(255,255,255,.9);font-weight:800;letter-spacing:.08em}
+.rrv-image-badge{position:absolute;left:-24px;bottom:26px;display:flex;flex-direction:column;background:#fff;border:1px solid var(--rrv-border);padding:16px 20px;border-radius:16px;box-shadow:var(--rrv-shadow)}
+.rrv-image-badge strong{font-size:1.25rem;color:var(--rrv-gold-dark)}
+.rrv-image-badge span{font-size:.78rem;color:var(--rrv-muted)}
+.rrv-text-link{display:inline-flex;gap:9px;align-items:center;margin-top:6px;font-weight:800;color:var(--rrv-forest)}
+.rrv-text-link span{color:var(--rrv-gold-dark);font-size:1.3rem;transition:transform .2s ease}
+.rrv-text-link:hover span{transform:translateX(5px)}
+.rrv-room-grid{align-items:stretch}
+.rrv-room-card{display:flex;flex-direction:column}
+.rrv-room-card .rrv-card__body{display:flex;flex:1;flex-direction:column}
+.rrv-room-card .rrv-card__footer{margin-top:auto}
+.rrv-room-placeholder{aspect-ratio:4/3}
+.rrv-btn--compact{min-height:40px;padding:0 16px;font-size:.84rem}
+.rrv-empty-state{grid-column:1/-1;border:1px dashed var(--rrv-border);border-radius:20px;padding:40px;text-align:center;background:#fff}
+.rrv-empty-state strong,.rrv-empty-state span{display:block}
+.rrv-empty-state span{color:var(--rrv-muted);margin-top:5px}
+.rrv-section--forest{background:var(--rrv-forest);color:#fff;position:relative;overflow:hidden}
+.rrv-section--forest:before{content:"";position:absolute;width:420px;height:420px;border:1px solid rgba(199,154,36,.18);border-radius:50%;right:-190px;top:-180px}
+.rrv-heading--light .rrv-kicker{color:#f2cd69}
+.rrv-heading--light h2{color:#fff}
+.rrv-section--forest .rrv-feature{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12);backdrop-filter:blur(10px)}
+.rrv-section--forest .rrv-feature h3{color:#fff}
+.rrv-section--forest .rrv-feature p{color:rgba(255,255,255,.7)}
+.rrv-section--forest .rrv-feature__icon{background:rgba(199,154,36,.16);color:#f2cd69;border:1px solid rgba(199,154,36,.25)}
+.rrv-gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:250px;gap:14px}
+.rrv-gallery-item,.rrv-gallery-placeholder{border:0;padding:0;border-radius:20px;overflow:hidden;background:#e9e4d8;position:relative}
+.rrv-gallery-item{cursor:zoom-in}
+.rrv-gallery-item--wide{grid-column:span 2;grid-row:span 2}
+.rrv-gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s ease,filter .45s ease}
+.rrv-gallery-item:after{content:"View";position:absolute;right:14px;bottom:14px;background:rgba(17,23,19,.74);color:#fff;border-radius:999px;padding:6px 10px;font-size:.74rem;font-weight:800;opacity:0;transform:translateY(5px);transition:.2s}
+.rrv-gallery-item:hover img{transform:scale(1.035);filter:saturate(1.04)}
+.rrv-gallery-item:hover:after{opacity:1;transform:none}
+.rrv-gallery-placeholder{display:grid;place-items:center;color:#8a816b;font-weight:800;background:linear-gradient(135deg,#f5f0e3,#e5d7ae)}
+.rrv-gallery-placeholder:first-child{grid-column:span 2;grid-row:span 2}
+.rrv-lightbox{position:fixed;inset:0;background:rgba(7,10,8,.92);z-index:120;display:grid;place-items:center;padding:32px;opacity:0;visibility:hidden;transition:.2s}
+.rrv-lightbox.is-open{opacity:1;visibility:visible}
+.rrv-lightbox img{max-width:min(1200px,94vw);max-height:88vh;border-radius:18px;box-shadow:0 30px 90px rgba(0,0,0,.45)}
+.rrv-lightbox__close{position:absolute;right:24px;top:20px;width:46px;height:46px;border:1px solid rgba(255,255,255,.25);border-radius:50%;background:rgba(255,255,255,.08);color:#fff;font-size:1.8rem}
+.rrv-quote{position:relative}
+.rrv-quote:before{content:"“";position:absolute;right:20px;top:6px;font-size:5rem;line-height:1;color:rgba(199,154,36,.12);font-weight:800}
+.rrv-book-section{background:linear-gradient(135deg,#151f18 0%,var(--rrv-forest) 60%,#1d2a21 100%);color:#fff;position:relative;overflow:hidden}
+.rrv-book-section:after{content:"";position:absolute;width:520px;height:520px;border-radius:50%;border:1px solid rgba(255,255,255,.06);left:-230px;bottom:-320px}
+.rrv-booking-page{position:relative;z-index:1;align-items:start}
+.rrv-book-copy{padding:34px 20px 20px 0;position:sticky;top:130px}
+.rrv-book-copy .rrv-kicker{color:#f2cd69}
+.rrv-book-copy h2{color:#fff}
+.rrv-book-copy .rrv-lead{color:rgba(255,255,255,.72)}
+.rrv-book-points{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:34px}
+.rrv-book-points div{border-top:1px solid rgba(255,255,255,.14);padding-top:14px}
+.rrv-book-points strong,.rrv-book-points span{display:block}
+.rrv-book-points strong{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:#f2cd69}
+.rrv-book-points span{font-size:.9rem;color:rgba(255,255,255,.8);margin-top:4px}
+.rrv-book-section .rrv-booking-form{background:#fff;color:var(--rrv-ink);box-shadow:0 32px 80px rgba(0,0,0,.22);border:0}
+.rrv-booking-note{font-size:.78rem;color:var(--rrv-muted);margin:16px 0 0}
+.rrv-honeypot{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important}
+.rrv-contact-panel{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center;background:#fff;border:1px solid var(--rrv-border);border-radius:30px;padding:54px;box-shadow:var(--rrv-shadow)}
+.rrv-contact-cards{display:grid;gap:12px}
+.rrv-contact-card{display:flex;flex-direction:column;padding:20px 22px;border:1px solid var(--rrv-border);border-radius:16px;background:var(--rrv-bg);transition:.2s}
+.rrv-contact-card:hover{transform:translateX(5px);border-color:rgba(199,154,36,.55)}
+.rrv-contact-card span{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--rrv-gold-dark);font-weight:800}
+.rrv-contact-card strong{margin-top:5px}
+.rrv-whatsapp-float{position:fixed;right:20px;bottom:20px;z-index:70;background:#173d27;color:#fff;border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:11px 17px;font-size:.82rem;font-weight:800;box-shadow:0 14px 35px rgba(0,0,0,.2)}
+.rrv-whatsapp-float:hover{transform:translateY(-2px)}
+body.rrv-lightbox-open{overflow:hidden}
+@media(max-width:980px){
+  html{scroll-padding-top:80px}
+  .rrv-one-page section[id]{scroll-margin-top:78px}
+  .rrv-scroll-cue{display:none}
+  .rrv-image-badge{left:16px}
+  .rrv-gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:220px}
+  .rrv-gallery-item--wide{grid-column:span 2}
+  .rrv-book-copy{position:static;padding:0}
+  .rrv-contact-panel{grid-template-columns:1fr;padding:38px}
+}
+@media(max-width:640px){
+  .rrv-hero{min-height:650px}
+  .rrv-hero__content{padding-bottom:160px}
+  .rrv-image-badge{position:relative;left:auto;bottom:auto;margin:-22px 14px 0}
+  .rrv-gallery-grid{grid-template-columns:1fr;grid-auto-rows:240px}
+  .rrv-gallery-item--wide,.rrv-gallery-placeholder:first-child{grid-column:span 1;grid-row:span 1}
+  .rrv-book-points{grid-template-columns:1fr}
+  .rrv-contact-panel{padding:28px 22px}
+  .rrv-whatsapp-float{right:14px;bottom:14px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rrv-scroll-cue i{animation:none}*{transition:none!important}}
