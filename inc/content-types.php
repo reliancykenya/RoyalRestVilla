@@ -4,21 +4,22 @@ if (!defined('ABSPATH')) exit;
 function rrv_register_content(){
     register_post_type('rrv_room',[
         'labels'=>['name'=>'Rooms','singular_name'=>'Room','add_new_item'=>'Add New Room','edit_item'=>'Edit Room'],
-        'public'=>true,
-        'menu_icon'=>'dashicons-bed',
-        'has_archive'=>false,
-        'rewrite'=>['slug'=>'rooms'],
+        'public'=>false,
+        'show_ui'=>true,
         'show_in_rest'=>true,
+        'publicly_queryable'=>false,
+        'exclude_from_search'=>true,
+        'menu_icon'=>'dashicons-bed',
         'supports'=>['title','editor','excerpt','thumbnail','page-attributes']
     ]);
     register_post_type('rrv_testimonial',[
         'labels'=>['name'=>'Testimonials','singular_name'=>'Testimonial'],
-        'public'=>false,'show_ui'=>true,'menu_icon'=>'dashicons-format-quote',
+        'public'=>false,'show_ui'=>true,'show_in_rest'=>true,'menu_icon'=>'dashicons-format-quote',
         'supports'=>['title','editor','thumbnail','page-attributes']
     ]);
     register_post_type('rrv_booking',[
         'labels'=>['name'=>'Bookings','singular_name'=>'Booking'],
-        'public'=>false,'show_ui'=>true,'menu_icon'=>'dashicons-calendar-alt',
+        'public'=>false,'show_ui'=>true,'show_in_rest'=>false,'menu_icon'=>'dashicons-calendar-alt',
         'supports'=>['title']
     ]);
 }
@@ -34,7 +35,7 @@ add_action('add_meta_boxes','rrv_meta_boxes');
 function rrv_room_meta_box($post){
     wp_nonce_field('rrv_room_meta','rrv_room_nonce');
     $fields=['price'=>'Nightly price','guests'=>'Max guests','beds'=>'Beds','size'=>'Room size','badge'=>'Badge','amenities'=>'Amenities (comma separated)'];
-    echo '<table class="form-table">';
+    echo '<p>Room content is displayed on the one-page homepage. Use the featured image as the room photo and the excerpt as the card description.</p><table class="form-table">';
     foreach($fields as $k=>$label){
         $v=get_post_meta($post->ID,'_rrv_'.$k,true);
         echo '<tr><th><label for="rrv_'.$k.'">'.esc_html($label).'</label></th><td><input class="regular-text" id="rrv_'.$k.'" name="rrv_'.$k.'" value="'.esc_attr($v).'" /></td></tr>';
